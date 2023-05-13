@@ -1,12 +1,12 @@
 <template>
     <div class="social-icon">
-      <img :src="icon" alt="Social Icon">
+      <img :src="getImage" alt="Social Icon" class="social-icon">
     </div>
 </template>
   
 <script>
   export default {
-    name: 'SocialIcon',
+    name: 'SocialIconComponent',
     props: {
       name: {
         type: String,
@@ -16,6 +16,11 @@
         type: String,
         required: true
       }
+    },
+    computed: {
+      getImage() {
+        return require(`@/assets/icons/${this.icon}`)
+      }
     }
   };
-  </script>
+</script>
