@@ -13,6 +13,7 @@ export default {
     background: url('../assets/icons/Plus.svg');
     height: 43px;
     width: 43px;
+    transform-origin: center center;
   }
 
   .button-parent {

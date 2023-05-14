@@ -12,7 +12,7 @@
     <div class="title-box absolute bottom-20 left-10p">
       <h1 class="text-4xl text-white text-center">Explore</h1>
       <div class="details-box flex items-center">
-        <ButtonComponent @open="showModal = true" />
+        <ButtonComponent @open="showModal = true" id="modalBtn"/>
         <ModalComponent :is-open="showModal" />
         <h5>More Details</h5>
       </div>
@@ -76,5 +76,3 @@ export default {
   }
 
 </style>
-
-

@@ -31,14 +31,14 @@
   </script>
   
   <style>
-  .modal-enter-active, .modal-leave-active {
+  /* .modal-enter-active, .modal-leave-active {
     transition: all 0.5s ease;
   } 
   
   .modal-enter, .modal-leave-to {
     transform-origin: center center;
     transform: scale(0);
-  }
+  } */
 
   h2 {
     font-family: 'Didot';
@@ -77,17 +77,17 @@
   }
 
   .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* animation-name: grow-modal;
-    animation-duration: 1s;
-    animation-fill-mode: forwards; */
+    animation-name: grow-modal;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
 }
 
 .modal-content {
@@ -130,16 +130,21 @@
   transform: scale(1.1);
 }
 
-/* @keyframes grow-modal {
+@keyframes grow-modal {
   0% {
     width: 0;
     height: 0;
     opacity: 0;
+    left: 10%;
+    bottom: 25%;
   }
   100% {
     width: 580px;
     height: 690px;
     opacity: 1;
+    left: 10%;
+    bottom: 25%;
   }
-} */
-  </style>
+}
+
+</style>
