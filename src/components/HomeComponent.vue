@@ -69,8 +69,8 @@ export default {
 }
 
 .title-box > h1 {
-  font-size: 224px;
-  line-height: 289px;
+  font-size: 14rem;
+  line-height: 21rem;
 }
 
 h5 {
