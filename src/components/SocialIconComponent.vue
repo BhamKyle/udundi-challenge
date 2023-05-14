@@ -1,6 +1,6 @@
 <template>
     <div class="social-icon">
-      <img :src="getImage" alt="Social Icon" class="social-icon h-10 w-10 sm:h-20 sm:w-20">
+      <img :src="getImage" alt="Social Icon" class="social-icon h-7 w-7 sm:h-15 sm:w-15">
     </div>
 </template>
   
