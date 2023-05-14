@@ -71,6 +71,17 @@ export default {
 .title-box > h1 {
   font-size: 14rem;
   line-height: 21rem;
+  overflow: hidden;
+  white-space: nowrap; 
+  animation:
+    typing 1s steps(40, end),
+    blink-caret 1s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
 
 h5 {
@@ -98,6 +109,15 @@ h5 {
 .fadeTitle-enter,
 .fadeTitle-leave-to {
   opacity: 0;
+}
+
+@keyframes shiny {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
 }
 
 </style>
