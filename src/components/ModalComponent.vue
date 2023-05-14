@@ -149,8 +149,8 @@
 
 @keyframes shrink-modal {
   0% {
-    width: 580px;
-    height: 690px;
+    width: 80vw;
+    height: 75vh;
     border-radius: 5px;
   }
   90% {
@@ -161,6 +161,24 @@
     width: 1px;
     height: 1px;
   }
+}
+
+@media (max-width: 767px) {
+    @keyframes grow-modal {
+        0% {
+            transform: scale(0);
+            width: 1px;
+            height: 1px;
+        }
+        50% {
+            border-radius: 25%;
+        }
+        100% {
+            width: 80vw;
+            height: 75vh;
+            border-radius: 10px;
+        }
+    }
 }
 
 @keyframes fadeIn {
