@@ -3,14 +3,16 @@
       <div v-if="isOpen" class="modal">
         <div class="modal-content relative">
             <div class="absolute close-container">
-                <div class="close-button">
-                    <div class="line line1"></div>
-                    <div class="line line2"></div>
-                </div>
+                <button class="relative z-50" @click="$emit('close')">
+                    <div class="close-button">
+                        <div class="line line1"></div>
+                        <div class="line line2"></div>
+                    </div>
+                </button>
             </div>
-            <div class="flex flex-col px-10 py-10 justify-evenly h-full">
+            <div class="modal-content-inner flex flex-col px-10 py-10 justify-evenly h-full">
                 <h2>Explore</h2>
-                <p class="modal-p">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? </p>
+                <p class="modal-p overflow-auto my-4">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? </p>
                 <a href="#" class="more-btn flex items-center justify-center"><p>Read More</p></a>
             </div>
         </div>
@@ -26,7 +28,8 @@
         type: Boolean,
         default: false,
       },
-    },
+    }
+
   }
   </script>
   
@@ -80,21 +83,31 @@
     position: absolute;
     bottom: 0%;
     left: 0%;
-    width: 100%;
-    height: 100%;
+    height: 1px;
+    width: 1px;
     display: flex;
     justify-content: center;
     align-items: center;
-    animation-name: grow-modal;
-    animation-duration: .5s;
-    animation-fill-mode: forwards;
+    animation: grow-modal .5s ease-in-out forwards;
+    box-shadow: 0px 0px 20px 7px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.modal.closed {
+    animation: shrink-modal .5s ease-in-out forwards;
 }
 
 .modal-content {
     background-color: white;
-    width: 580px; 
-    height: 690px; 
-    box-shadow: 0px 0px 20px 7px rgba(0, 0, 0, 0.3);
+    height: 100%;
+    width: 100%;
+    animation: bounce-modal .5s;
+}
+
+.modal-content-inner {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: .6s;
 }
 
 .close-container {
@@ -132,18 +145,61 @@
 
 @keyframes grow-modal {
   0% {
-    width: 0;
-    height: 0;
-    opacity: 0;
-    left: 10%;
-    bottom: 25%;
+    transform: scale(0);
+    width: 1px;
+    height: 1px;
+  }
+  10% {
+    border-radius: 50%;
   }
   100% {
     width: 580px;
     height: 690px;
+    border-radius: 5px;
+  }
+}
+
+@media (max-width: 767px) {
+    @keyframes grow-modal {
+        0% {
+            transform: scale(0);
+            width: 1px;
+            height: 1px;
+        }
+        10% {
+            border-radius: 50%;
+        }
+        100% {
+            width: 80vw;
+            height: 75vh;
+            border-radius: 5px;
+        }
+    }
+}
+
+
+@keyframes shrink-modal {
+  0% {
+    width: 580px;
+    height: 690px;
+    border-radius: 5px;
+  }
+  90% {
+    border-radius: 50%;
+  }
+  100% {
+    transform: scale(0);
+    width: 1px;
+    height: 1px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
     opacity: 1;
-    left: 10%;
-    bottom: 25%;
   }
 }
 

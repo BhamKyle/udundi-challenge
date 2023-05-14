@@ -10,10 +10,12 @@
       </div>
     </div>
     <div class="title-box absolute bottom-20 left-10p">
-      <h1 class="text-4xl text-white text-center">Explore</h1>
+      <transition name="fadeTitle">
+        <h1 v-if="!showModal" class="lp-title text-white text-center">Explore</h1>
+      </transition>
       <div class="details-box flex items-center">
-        <ButtonComponent @open="showModal = true" id="modalBtn"/>
-        <ModalComponent :is-open="showModal" />
+        <ButtonComponent @open="handleModalOpen" id="modalBtn"/>
+        <ModalComponent :isOpen="showModal" @close="handleModalClose" />
         <h5>More Details</h5>
       </div>
     </div>
@@ -33,6 +35,16 @@ export default {
       return {
         showModal: false,
       }
+    },
+    methods: {
+      handleModalOpen() {
+        this.showModal = true;
+        // document.querySelector('.lp-title').classList.add('active-modal');
+      },
+      handleModalClose() {
+        this.showModal = false;
+        document.querySelector('.modal').classList.add('closed');
+      },
     }
 }
 </script>
@@ -74,5 +86,45 @@ export default {
     text-align: center;
     letter-spacing: 0.625px;
   }
+
+  @media (max-width: 767px) {
+    .title-box > h1 {
+      font-weight: 500;
+      font-size: 75px;
+      line-height: 90px;
+    }
+    h5 {
+      font-size: 18px;
+    }
+  }
+
+  /* .lp-title.active-modal {
+    animation: fadeOut .5s forwards;
+  }
+
+  .lp-title.inactive-modal {
+    animation: fadeOut .5s reverse;
+  }
+
+  @keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+} */
+
+.fadeTitle-enter-active,
+.fadeTitle-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fadeTitle-enter,
+.fadeTitle-leave-to {
+  opacity: 0;
+}
+
+
 
 </style>
