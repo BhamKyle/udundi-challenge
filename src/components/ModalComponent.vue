@@ -3,7 +3,7 @@
       <div v-if="isOpen" class="modal">
         <div class="modal-content relative">
             <div class="absolute close-container">
-                <button class="relative z-50" @click="$emit('close')">
+                <button class="relative z-50 p-5" @click="$emit('close')">
                     <div class="close-button">
                         <div class="line line1"></div>
                         <div class="line line2"></div>
@@ -34,14 +34,6 @@
   </script>
   
   <style>
-  /* .modal-enter-active, .modal-leave-active {
-    transition: all 0.5s ease;
-  } 
-  
-  .modal-enter, .modal-leave-to {
-    transform-origin: center center;
-    transform: scale(0);
-  } */
 
   h2 {
     font-family: 'Didot';
@@ -111,8 +103,14 @@
 }
 
 .close-container {
-    top: 35px;
-    right: 35px;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 15px;
+    right: 15px;
+    padding: 30px;
 }
 
 .close-button {
