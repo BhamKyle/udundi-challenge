@@ -9,14 +9,14 @@
           </div>
       </div>
     </div>
-    <div class="title-box absolute bottom-20 left-10p">
+    <div class="title-box absolute bottom-20p left-10p">
       <transition name="fadeTitle">
-        <h1 v-if="!showModal" class="lp-title text-white text-center">Explore</h1>
+        <h1 v-if="!showModal" class="lp-title text-white text-center font-bold">Explore</h1>
       </transition>
       <div class="details-box flex items-center">
         <ButtonComponent @open="handleModalOpen" id="modalBtn"/>
         <ModalComponent :isOpen="showModal" @close="handleModalClose" />
-        <h5>More Details</h5>
+        <h5 class="text-white font-normal text-center">More Details</h5>
       </div>
     </div>
   </div>
@@ -54,7 +54,7 @@ export default {
 --primary-color: #611818;
 
 }
-.bottom-20 {
+.bottom-20p {
   bottom: 20%;
 }
 .left-10p {
@@ -69,21 +69,13 @@ export default {
 }
 
 .title-box > h1 {
-  font-family: 'Didot';
-  font-style: normal;
-  font-weight: 700;
   font-size: 224px;
   line-height: 289px;
 }
 
 h5 {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
   font-size: 25px;
   line-height: 30px;
-  color: #ffff;
-  text-align: center;
   letter-spacing: 0.625px;
 }
 
@@ -107,7 +99,5 @@ h5 {
 .fadeTitle-leave-to {
   opacity: 0;
 }
-
-
 
 </style>

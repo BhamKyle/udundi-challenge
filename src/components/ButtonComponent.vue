@@ -1,5 +1,5 @@
 <template>
-    <button class="button-parent" @click="$emit('open')"><div class="plus-icon mr-2 md:mr-6"></div></button>
+    <button class="button-parent relative" @click="$emit('open')"><div class="plus-icon mr-2 md:mr-6 h-5 w-5 sm:h-10 sm:w-10"></div></button>
 </template>
 
 <script>
@@ -11,20 +11,7 @@ export default {
 <style>
   .plus-icon {
     background: url('../assets/icons/Plus.svg');
-    height: 43px;
-    width: 43px;
+    background-size: contain;
   }
 
-  .button-parent {
-    position: relative;
-  }
-
-  @media (max-width: 767px) {
-    .plus-icon {
-        background: url('../assets/icons/Plus.svg');
-        height: 30px;
-        width: 30px;
-        background-size: cover;
-    }
-  }
 </style>
