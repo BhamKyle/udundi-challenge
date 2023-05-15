@@ -3,7 +3,7 @@
       <div v-if="isOpen" class="modal absolute flex items-center justify-center overflow-hidden">
         <div class="modal-content relative bg-white h-full w-full">
             <div class="absolute close-container flex items-center justify-center">
-                <button class="relative z-50 p-6 cursor-pointer" @click="$emit('close')">
+                 <button class="relative z-50 p-6 cursor-pointer" @click="$emit('close')"> <!-- emitting the 'close' up to home component -->
                     <div class="close-button relative">
                         <div class="line line1"></div>
                         <div class="line line2"></div>
@@ -112,6 +112,8 @@
   transform: scale(1.1);
 }
 
+/* grow-modal animation */
+
 @keyframes grow-modal {
   0% {
     transform: scale(0);
@@ -128,6 +130,8 @@
   }
 }
 
+/* grow-modal animation mobile */
+
 @media (max-width: 767px) {
     @keyframes grow-modal {
         0% {
@@ -146,11 +150,12 @@
     }
 }
 
+/* shrink modal animation */
 
 @keyframes shrink-modal {
   0% {
-    width: 80vw;
-    height: 75vh;
+    width: 580px;
+    height: 690px;
     border-radius: 5px;
   }
   90% {
@@ -163,22 +168,24 @@
   }
 }
 
+/* shrink modal animation mobile */
+
 @media (max-width: 767px) {
-    @keyframes grow-modal {
-        0% {
-            transform: scale(0);
-            width: 1px;
-            height: 1px;
-        }
-        50% {
-            border-radius: 25%;
-        }
-        100% {
-            width: 80vw;
-            height: 75vh;
-            border-radius: 10px;
-        }
+  @keyframes shrink-modal {
+    0% {
+      width: 80vw;
+      height: 75vh;
+      border-radius: 5px;
     }
+    90% {
+      border-radius: 50%;
+    }
+    100% {
+      transform: scale(0);
+      width: 1px;
+      height: 1px;
+    }
+  }
 }
 
 @keyframes fadeIn {
@@ -189,5 +196,7 @@
     opacity: 1;
   }
 }
+
+
 
 </style>

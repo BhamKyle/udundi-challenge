@@ -4,7 +4,7 @@
       <div class="lp-rectangle w-1/4 h-full min-h-screen"></div>
       <div class="flex">
           <div class="flex justify-end flex-col items-end gap-4 mr-2 mb-6">
-              <SocialIconComponent icon="Facebook.svg" name="facebook"/>
+              <SocialIconComponent icon="Facebook.svg" name="facebook"/> <!-- overkill to make component for these, just wanted to demonstrate -->
               <SocialIconComponent icon="Instagram.svg" name="instagram"/>
           </div>
       </div>
@@ -39,12 +39,12 @@ export default {
     methods: {
       handleModalOpen() {
         this.showModal = true;
-        // document.querySelector('.lp-title').classList.add('active-modal');
       },
       handleModalClose() {
         this.showModal = false;
         document.querySelector('.modal').classList.add('closed');
       },
+      // theres a more elegant way to handle these in Vue
     }
 }
 </script>
