@@ -1,5 +1,5 @@
 <template>
-    <button class="button-parent relative" @click="$emit('open')"><div class="plus-icon mr-2 md:mr-6 h-5 w-5 sm:h-10 sm:w-10"></div></button>
+    <button class="button-parent relative" @click="$emit('open')"><div class="plus-icon bg-no-repeat mr-2 md:mr-6 h-5 w-5 sm:h-10 sm:w-10"></div></button>
 </template>
 
 <script>
