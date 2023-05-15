@@ -10,7 +10,7 @@
                     </div>
                 </button>
             </div>
-            <div class="modal-content-inner flex flex-col px-10 py-10 justify-evenly h-full">
+            <div class="modal-content-inner flex flex-col px-24 py-10 justify-evenly h-full">
                 <h2 class="font-bold">Explore</h2>
                 <p class="modal-p overflow-auto my-4">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? </p>
                 <a href="#" class="more-btn flex items-center justify-center"><p class="text-white font-bold">Read More</p></a>
