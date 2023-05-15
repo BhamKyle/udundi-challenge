@@ -91,6 +91,8 @@
   height: 22px;
 }
 
+/* line animation, this was a codepen, not mine but I wanted something nice  */
+
 .line {
   position: absolute;
   width: 100%;
@@ -127,6 +129,8 @@
     width: 580px;
     height: 690px;
     border-radius: 10px;
+    max-width: 80vw;
+    max-height: 75vh;
   }
 }
 
