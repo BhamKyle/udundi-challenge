@@ -12,6 +12,7 @@ export default {
   .plus-icon {
     background: url('../assets/icons/Plus.svg');
     background-size: contain;
+    background-repeat: no-repeat;
   }
 
 </style>
